@@ -13,13 +13,18 @@ void setup() {
 
 int temp = 0;
 
+// applies cubic scaling on a value -1 to 1 
+int scale(int raw) {
+  return raw * raw * raw;
+}
+
 void loop() {
   // Read the four joystick axes
   // These will be in the range [-1.0, 1.0]
-  float rightX = RR_axisRX();
-  float rightY = RR_axisRY();
-  float leftX  = RR_axisLX();
-  float leftY  = RR_axisLY();
+  float rightX = scale(RR_axisRX());
+  float rightY = scale(RR_axisRY());
+  float leftX  = scale(RR_axisLX());
+  float leftY  = scale(RR_axisLY());
 
   // Arcade-drive scheme
   // Left Y-axis = throttle
