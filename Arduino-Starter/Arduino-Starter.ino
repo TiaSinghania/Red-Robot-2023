@@ -14,7 +14,7 @@ void setup() {
 int temp = 0;
 
 // applies cubic scaling on a value -1 to 1 
-int scale(int raw) {
+float scale(float raw) {
   return raw * raw * raw;
 }
 
